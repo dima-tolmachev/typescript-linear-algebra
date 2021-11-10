@@ -1,5 +1,5 @@
-import mat from './vector2D';
+import Vector from './vector';
 
 export default {
-    mat
+    Vector
 }

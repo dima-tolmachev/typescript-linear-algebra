@@ -1,16 +1,25 @@
-# Typescript Vector Math (TSVM)
+# Typescript Linear Algebra (TSLA) 
 
 #### Todo:
-1. Vector2D
-    - [ ] Nulls
-    - [ ] Add
-    - [ ] Subtract
-    - [ ] Multiply
-    - [ ] Divide
-    - [ ] Clone
-    - [ ] Clone inversed
-    - [ ] Equals
-    - [ ] Scale
-2. Matrix2D
-3. Vector3D
-4. Matrix3D
+1. Vector
+    - [X] Value (getter & setter)
+    - [X] Rows
+    - [X] Reset
+    - [X] At
+    - [X] Set at
+    - [X] Add
+    - [X] Subtract
+    - [X] Multiply
+    - [X] Divide
+    - [X] Inverse
+    - [X] Clone
+    - [X] Equals
+    - [X] Scale
+    - [X] Implement to all elements (private)
+    - [ ] Mix
+    - [ ] Dot
+    - [ ] Squeared length
+    - [ ] Length
+    - [ ] Normalize
+    - [ ] Cross
+2. Matrix
