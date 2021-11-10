@@ -1,7 +1,7 @@
 # Typescript Vector Math (TSVM)
 
 #### Todo:
-1. Vector2D
+1. Vector
     - [ ] Nulls
     - [ ] Add
     - [ ] Subtract
@@ -11,6 +11,4 @@
     - [ ] Clone inversed
     - [ ] Equals
     - [ ] Scale
-2. Matrix2D
-3. Vector3D
-4. Matrix3D
+2. Matrix
