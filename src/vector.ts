@@ -78,6 +78,38 @@ export default class Vector {
         this.value = this.implementToAllElements((val) => (val * num)).value;
     }
 
+    public dot(vec2: Vector): number {
+        if (this.rows != vec2.rows) throw new Error("Those vectors are from different dimensions.");
+        return this.value.reduce((res, v, i) => res + (v * vec2.at(i)), 0);
+    }
+
+    public sqrdLength(): number {
+        return this.dot(this);
+    }
+
+    public vlength(): number {
+        return Math.abs(Math.sqrt(this.sqrdLength()));
+    }
+
+    public noramalize(): Vector {
+        return this.implementToAllElements((v) => {
+            if (v == 0) return 0;
+            return v / this.vlength();
+        });
+    }
+
+    public cross(vec2: Vector): Vector {
+        if (this.rows != 3 || vec2.rows != 3) throw new Error('Operation requires 3 dimensional vectors only.');
+        var result: number[] = [];
+        result[0] = this.at(1) * vec2.at(2) - this.at(2) * vec2.at(1);
+        result[1] = this.at(2) * vec2.at(0) - this.at(0) * vec2.at(2);
+        result[2] = this.at(0) * vec2.at(1) - this.at(1) * vec2.at(0);
+        return new Vector(result);
+    }
+
+    /**
+     * Tricky iterator used for many other methods.
+     */
     private implementToAllElements(func: (v: number, i: number) => number): Vector {
         return new Vector(this._vec.map(func));
     }

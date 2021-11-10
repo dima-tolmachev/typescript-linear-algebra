@@ -16,10 +16,9 @@
     - [X] Equals
     - [X] Scale
     - [X] Implement to all elements (private)
-    - [ ] Mix
-    - [ ] Dot
-    - [ ] Squeared length
-    - [ ] Length
-    - [ ] Normalize
-    - [ ] Cross
+    - [X] Dot
+    - [X] Squared length
+    - [X] Length
+    - [X] Normalize
+    - [X] Cross
 2. Matrix

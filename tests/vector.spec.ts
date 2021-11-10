@@ -359,3 +359,100 @@ describe('scale()', () => {
         expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([0, 0, 0]));
     });
 });
+
+describe('dot()', () => {
+    it('dot product of 1 dimensional vectors', () => {
+        const vec1 = new Vector([10]);
+        const vec2 = new Vector([2])
+        expect(vec1.dot(vec2)).to.equal(20);
+    });
+
+    it('dot product of 2 dimensional vectors', () => {
+        const vec1 = new Vector([-90, 20]);
+        const vec2 = new Vector([-1, 2])
+        expect(vec1.dot(vec2)).to.equal(130);
+    });
+
+    it('dot product of 3 dimensional vectors', () => {
+        const vec1 = new Vector([-9, -9, -9]);
+        const vec2 = new Vector([1, 1, 1])
+        expect(vec1.dot(vec2)).to.equal(-27);
+    });
+
+    it('try to find the dot product of vectors of different dimensions', () => {
+        const vec1 = new Vector([10, 20, 30]);
+        const vec2 = new Vector([-8, 2])
+        expect(() => vec1.dot(vec2)).to.throw('Those vectors are from different dimensions.');
+    });
+});
+
+describe('sqrdLength()', () => {
+    it('squared length of 1 dimensional vector', () => {
+        const vec = new Vector([10]);
+        expect(vec.sqrdLength()).to.equal(100);
+    });
+
+    it('squared length of 2 dimensional vector', () => {
+        const vec = new Vector([-90, 20]);
+        expect(vec.sqrdLength()).to.equal(8500);
+    });
+
+    it('squared length of 3 dimensional vector', () => {
+        const vec = new Vector([-9, -9, -9]);
+        expect(vec.sqrdLength()).to.equal(243);
+    });
+});
+
+describe('vlength()', () => {
+    it('length of 1 dimensional vector', () => {
+        const vec = new Vector([-87]);
+        expect(vec.vlength()).to.equal(87);
+    });
+
+    it('length of 2 dimensional vector', () => {
+        const vec = new Vector([-90, -20]);
+        expect(Math.round(vec.vlength())).to.equal(92);
+    });
+
+    it('length of 3 dimensional vector', () => {
+        const vec = new Vector([-9, -9, -9]);
+        expect(Math.round(vec.vlength())).to.equal(16);
+    });
+});
+
+describe('noramalize()', () => {
+    it('noramalize 1 dimensional vector', () => {
+        const vec = new Vector([-87]);
+        expect(JSON.stringify(vec.noramalize().value)).to.equal(JSON.stringify(new Vector([-87/87]).value));
+    });
+
+    it('noramalize 2 dimensional vector', () => {
+        const vec = new Vector([4, 3]);
+        expect(JSON.stringify(vec.noramalize().value)).to.equal(JSON.stringify(new Vector([4/5, 3/5]).value));
+    });
+
+    it('noramalize 3 dimensional vector', () => {
+        const vec = new Vector([0, 0, 0]);
+        expect(JSON.stringify(vec.noramalize().value)).to.equal(JSON.stringify(new Vector([0, 0, 0]).value));
+    });
+});
+
+describe('cross()', () => {
+    it('try to cross 1 dimensional vector with another one', () => {
+        const vec1 = new Vector([3]);
+        const vec2 = new Vector([2]);
+        expect(() => vec1.cross(vec2)).to.throw('Operation requires 3 dimensional vectors only.');
+    });
+
+    it('try to cross 2 dimensional vector with another one', () => {
+        const vec1 = new Vector([3, 5]);
+        const vec2 = new Vector([2, 5]);
+        expect(() => vec1.cross(vec2)).to.throw('Operation requires 3 dimensional vectors only.');
+    });
+
+    it('cross 3 dimensional vectors', () => {
+        const vec1 = new Vector([3, 5, 3]);
+        const vec2 = new Vector([2, 5, 2]);
+        expect(JSON.stringify(vec1.cross(vec2).value)).to.equal(JSON.stringify(new Vector([-5, 0, 5]).value));
+    });
+});
