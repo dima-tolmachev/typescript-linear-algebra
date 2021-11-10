@@ -1,1 +1,16 @@
-# typescript-vector-math
+# Typescript Vector Math (TSVM)
+
+#### Todo:
+1. Vector2D
+    - [ ] Nulls
+    - [ ] Add
+    - [ ] Subtract
+    - [ ] Multiply
+    - [ ] Divide
+    - [ ] Clone
+    - [ ] Clone inversed
+    - [ ] Equals
+    - [ ] Scale
+2. Matrix2D
+3. Vector3D
+4. Matrix3D
