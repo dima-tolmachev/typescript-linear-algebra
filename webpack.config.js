@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/tsvm.ts',
+    entry: './src/lats.ts',
     devtool: 'inline-source-map',
-    mode: 'development',
+    mode: 'production',
     module: {
         rules: [
             {
@@ -17,8 +17,8 @@ module.exports = {
         extensions: ['.ts']
     },
     output: {
-        library: 'tsvm',
-        filename: 'tsvm.js',
+        library: 'lats',
+        filename: 'lats.js',
         path: path.resolve(__dirname, 'dist')
     }
 };
