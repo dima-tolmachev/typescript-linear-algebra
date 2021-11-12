@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import Vector from '../src/vector';
 
 describe('Creating objects with valid and invalid arguments', () => {
-    it('creating Vector without any value throws an error', () => {
+    it('creating Vector without any values throws an error', () => {
         expect(() => new Vector([])).to.throw('Vector must be size of 2 or 3.');
     });
 
@@ -20,77 +20,77 @@ describe('Creating objects with valid and invalid arguments', () => {
     });
 });
 
-describe('value getter and setter', () => {
-    it('value getter (1 dimensional vector)', () => {
-        expect(JSON.stringify(new Vector([1]).value)).to.equal(JSON.stringify([1]));
+describe('valuess getter and setter', () => {
+    it('valuess getter (1 dimensional vector)', () => {
+        expect(JSON.stringify(new Vector([1]).values)).to.equal(JSON.stringify([1]));
     });
 
-    it('value getter (2 dimensional vector)', () => {
-        expect(JSON.stringify(new Vector([1, 2]).value)).to.equal(JSON.stringify([1, 2]));
+    it('valuess getter (2 dimensional vector)', () => {
+        expect(JSON.stringify(new Vector([1, 2]).values)).to.equal(JSON.stringify([1, 2]));
     });
 
-    it('value getter (3 dimensional vector)', () => {
-        expect(JSON.stringify(new Vector([1, 2, 3]).value)).to.equal(JSON.stringify([1, 2, 3]));
+    it('valuess getter (3 dimensional vector)', () => {
+        expect(JSON.stringify(new Vector([1, 2, 3]).values)).to.equal(JSON.stringify([1, 2, 3]));
     });
 
-    it('value setter (3 dimensional vector)', () => {
+    it('valuess setter (3 dimensional vector)', () => {
         const vec = new Vector([1, 2, 3]);
-        vec.value = [1, 2, 5];
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([1, 2, 5]));
+        vec.values = [1, 2, 5];
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([1, 2, 5]));
     });
 
-    it('value setter replacing 3 dimensional vector with 2 dimensional vector', () => {
+    it('valuess setter replacing 3 dimensional vector with 2 dimensional vector', () => {
         const vec = new Vector([1, 2, 3]);
-        vec.value = [-10, 100];
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([-10, 100]));
+        vec.values = [-10, 100];
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([-10, 100]));
     });
 
-    it('value setter replacing 3 dimensional vector with 1 dimensional vector', () => {
+    it('valuess setter replacing 3 dimensional vector with 1 dimensional vector', () => {
         const vec = new Vector([1, 2, 3]);
-        vec.value = [0];
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([0]));
+        vec.values = [0];
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([0]));
     });
 
-    it('value setter replacing 3 dimensional vector with invalid value', () => {
+    it('valuess setter replacing 3 dimensional vector with invalid valuess', () => {
         const vec = new Vector([1, 2, 3]);
-        expect(() => vec.value = [1, 1, 1, 1, 1, 1, 1, 1]).to.throw('Vector must be size of 2 or 3.');
+        expect(() => vec.values = [1, 1, 1, 1, 1, 1, 1, 1]).to.throw('Vector must be size of 2 or 3.');
     });
 });
 
-describe('value getter and setter', () => {
-    it('value getter (1 dimensional vector)', () => {
-        expect(JSON.stringify(new Vector([1]).value)).to.equal(JSON.stringify([1]));
+describe('valuess getter and setter', () => {
+    it('valuess getter (1 dimensional vector)', () => {
+        expect(JSON.stringify(new Vector([1]).values)).to.equal(JSON.stringify([1]));
     });
 
-    it('value getter (2 dimensional vector)', () => {
-        expect(JSON.stringify(new Vector([1, 2]).value)).to.equal(JSON.stringify([1, 2]));
+    it('valuess getter (2 dimensional vector)', () => {
+        expect(JSON.stringify(new Vector([1, 2]).values)).to.equal(JSON.stringify([1, 2]));
     });
 
-    it('value getter (3 dimensional vector)', () => {
-        expect(JSON.stringify(new Vector([1, 2, 3]).value)).to.equal(JSON.stringify([1, 2, 3]));
+    it('valuess getter (3 dimensional vector)', () => {
+        expect(JSON.stringify(new Vector([1, 2, 3]).values)).to.equal(JSON.stringify([1, 2, 3]));
     });
 
-    it('value setter (3 dimensional vector)', () => {
+    it('valuess setter (3 dimensional vector)', () => {
         const vec = new Vector([1, 2, 3]);
-        vec.value = [1, 2, 5];
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([1, 2, 5]));
+        vec.values = [1, 2, 5];
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([1, 2, 5]));
     });
 
-    it('value setter replacing 3 dimensional vector with 2 dimensional vector', () => {
+    it('valuess setter replacing 3 dimensional vector with 2 dimensional vector', () => {
         const vec = new Vector([1, 2, 3]);
-        vec.value = [-10, 100];
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([-10, 100]));
+        vec.values = [-10, 100];
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([-10, 100]));
     });
 
-    it('value setter replacing 3 dimensional vector with 1 dimensional vector', () => {
+    it('valuess setter replacing 3 dimensional vector with 1 dimensional vector', () => {
         const vec = new Vector([1, 2, 3]);
-        vec.value = [0];
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([0]));
+        vec.values = [0];
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([0]));
     });
 
-    it('value setter replacing 3 dimensional vector with invalid value', () => {
+    it('valuess setter replacing 3 dimensional vector with invalid valuess', () => {
         const vec = new Vector([1, 2, 3]);
-        expect(() => vec.value = [1, 1, 1, 1, 1, 1, 1, 1]).to.throw('Vector must be size of 2 or 3.');
+        expect(() => vec.values = [1, 1, 1, 1, 1, 1, 1, 1]).to.throw('Vector must be size of 2 or 3.');
     });
 });
 
@@ -112,19 +112,19 @@ describe('reset()', () => {
     it('1 dimensional vector', () => {
         const vec = new Vector([10]);
         vec.reset();
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([0]));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([0]));
     });
 
     it('2 dimensional vector', () => {
         const vec = new Vector([10, 20]);
         vec.reset();
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([0, 0]));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([0, 0]));
     });
 
     it('3 dimensional vector', () => {
         const vec = new Vector([10, 20, 30]);
         vec.reset();
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([0, 0, 0]));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([0, 0, 0]));
     });
 });
 
@@ -179,7 +179,7 @@ describe('setAt()', () => {
         expect(vec.at(vec.rows - 1)).to.equal(10000000000);
     });
 
-    it('Attempt to set a value outside the actual vector length throw an error', () => {
+    it('Attempt to set a values outside the actual vector length throw an error', () => {
         const vec = new Vector([10, 20]);
         expect(() => vec.setAt(4, 30)).to.throw(`Index must be in ragne of 0 and ${vec.rows}.`);
     });
@@ -188,17 +188,17 @@ describe('setAt()', () => {
 describe('add()', () => {
     it('1 dimensional vector + another one', () => {
         const vec = new Vector([10]);
-        expect(JSON.stringify(vec.add(new Vector([20])).value)).to.equal(JSON.stringify(new Vector([30]).value));
+        expect(JSON.stringify(vec.add(new Vector([20])).values)).to.equal(JSON.stringify(new Vector([30]).values));
     });
 
     it('2 dimensional vector + another one', () => {
         const vec = new Vector([10, 10]);
-        expect(JSON.stringify(vec.add(new Vector([20, 20])).value)).to.equal(JSON.stringify((new Vector([30, 30]).value)));
+        expect(JSON.stringify(vec.add(new Vector([20, 20])).values)).to.equal(JSON.stringify((new Vector([30, 30]).values)));
     });
 
     it('3 dimensional vector + another one', () => {
         const vec = new Vector([10, -1, 0]);
-        expect(JSON.stringify(vec.add(new Vector([0, -9, 1])).value)).to.equal(JSON.stringify(new Vector([10, -10, 1]).value));
+        expect(JSON.stringify(vec.add(new Vector([0, -9, 1])).values)).to.equal(JSON.stringify(new Vector([10, -10, 1]).values));
     });
 
     it('Attempt to add 2 demensional vector to 3 demensional throw an error', () => {
@@ -210,17 +210,17 @@ describe('add()', () => {
 describe('subtract()', () => {
     it('1 dimensional vector - another one', () => {
         const vec = new Vector([10]);
-        expect(JSON.stringify(vec.subtract(new Vector([20])).value)).to.equal(JSON.stringify(new Vector([-10]).value));
+        expect(JSON.stringify(vec.subtract(new Vector([20])).values)).to.equal(JSON.stringify(new Vector([-10]).values));
     });
 
     it('2 dimensional vector - another one', () => {
         const vec = new Vector([10, 10]);
-        expect(JSON.stringify(vec.subtract(new Vector([20, 20])).value)).to.equal(JSON.stringify((new Vector([-10, -10]).value)));
+        expect(JSON.stringify(vec.subtract(new Vector([20, 20])).values)).to.equal(JSON.stringify((new Vector([-10, -10]).values)));
     });
 
     it('3 dimensional vector - another one', () => {
         const vec = new Vector([10, -1, 0]);
-        expect(JSON.stringify(vec.subtract(new Vector([0, -9, 1])).value)).to.equal(JSON.stringify(new Vector([10, 8, -1]).value));
+        expect(JSON.stringify(vec.subtract(new Vector([0, -9, 1])).values)).to.equal(JSON.stringify(new Vector([10, 8, -1]).values));
     });
 
     it('Attempt to substuct 2 demensional vector from 3 demensional throw an error', () => {
@@ -232,17 +232,17 @@ describe('subtract()', () => {
 describe('multiply()', () => {
     it('1 dimensional vector * another one', () => {
         const vec = new Vector([10]);
-        expect(JSON.stringify(vec.multiply(new Vector([20])).value)).to.equal(JSON.stringify(new Vector([200]).value));
+        expect(JSON.stringify(vec.multiply(new Vector([20])).values)).to.equal(JSON.stringify(new Vector([200]).values));
     });
 
     it('2 dimensional vector * another one', () => {
         const vec = new Vector([10, 10]);
-        expect(JSON.stringify(vec.multiply(new Vector([20, 20])).value)).to.equal(JSON.stringify((new Vector([200, 200]).value)));
+        expect(JSON.stringify(vec.multiply(new Vector([20, 20])).values)).to.equal(JSON.stringify((new Vector([200, 200]).values)));
     });
 
     it('3 dimensional vector * another one', () => {
         const vec = new Vector([10, -1, 0]);
-        expect(JSON.stringify(vec.multiply(new Vector([0, -9, 1])).value)).to.equal(JSON.stringify(new Vector([0, 9, 0]).value));
+        expect(JSON.stringify(vec.multiply(new Vector([0, -9, 1])).values)).to.equal(JSON.stringify(new Vector([0, 9, 0]).values));
     });
 
     it('Attempt to multiply 2 demensional vector by 3 demensional throw an error', () => {
@@ -254,22 +254,22 @@ describe('multiply()', () => {
 describe('divide()', () => {
     it('1 dimensional vector / another one', () => {
         const vec = new Vector([20]);
-        expect(JSON.stringify(vec.divide(new Vector([20])).value)).to.equal(JSON.stringify(new Vector([1]).value));
+        expect(JSON.stringify(vec.divide(new Vector([20])).values)).to.equal(JSON.stringify(new Vector([1]).values));
     });
 
     it('2 dimensional vector / another one', () => {
         const vec = new Vector([100, 100]);
-        expect(JSON.stringify(vec.divide(new Vector([5, 20])).value)).to.equal(JSON.stringify((new Vector([20, 5]).value)));
+        expect(JSON.stringify(vec.divide(new Vector([5, 20])).values)).to.equal(JSON.stringify((new Vector([20, 5]).values)));
     });
 
     it('3 dimensional vector / another one', () => {
         const vec = new Vector([10, -1, 0]);
-        expect(JSON.stringify(vec.divide(new Vector([1, 1, 1])).value)).to.equal(JSON.stringify(new Vector([10, -1, 0]).value));
+        expect(JSON.stringify(vec.divide(new Vector([1, 1, 1])).values)).to.equal(JSON.stringify(new Vector([10, -1, 0]).values));
     });
 
-    it('Attempt to divide 2 demensional vector by 2 demensional witch has "0" value', () => {
+    it('Attempt to divide 2 demensional vector by 2 demensional witch has "0" values', () => {
         const vec = new Vector([-11, 11, 99]);
-        expect(JSON.stringify(vec.divide(new Vector([0, 0, 9])).value)).to.equal(JSON.stringify(new Vector([-11, 11, 11]).value));
+        expect(JSON.stringify(vec.divide(new Vector([0, 0, 9])).values)).to.equal(JSON.stringify(new Vector([-11, 11, 11]).values));
     });
 
     it('Attempt to divide 2 demensional vector by 3 demensional throw an error', () => {
@@ -282,19 +282,19 @@ describe('inverse()', () => {
     it('inversing 1 dimensional vector', () => {
         const vec = new Vector([20]);
         vec.inverse();
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([-20]));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([-20]));
     });
 
     it('inversing 2 dimensional vector', () => {
         const vec = new Vector([100, 100]);
         vec.inverse();
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([-100, -100]));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([-100, -100]));
     });
 
     it('inversing 3 dimensional vector', () => {
         const vec = new Vector([10, -1, 0]);
         vec.inverse();
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([-10, 1, 0]));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([-10, 1, 0]));
     });
 });
 
@@ -302,19 +302,19 @@ describe('clone()', () => {
     it('cloning 1 dimensional vector', () => {
         const vec = new Vector([20]);
         const vec2 = vec.clone();
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify(vec2.value));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify(vec2.values));
     });
 
     it('cloning 2 dimensional vector', () => {
         const vec = new Vector([100, 100]);
         const vec2 = vec.clone();
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify(vec2.value));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify(vec2.values));
     });
 
     it('cloning 3 dimensional vector', () => {
         const vec = new Vector([10, -1, 0]);
         const vec2 = vec.clone();
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify(vec2.value));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify(vec2.values));
     });
 });
 
@@ -344,19 +344,19 @@ describe('scale()', () => {
     it('scaling 1 dimensional vector', () => {
         const vec = new Vector([10]);
         vec.scale(1000);
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([10000]));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([10000]));
     });
 
     it('scaling 2 dimensional vector', () => {
         const vec = new Vector([10, 20]);
         vec.scale(-2);
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([-20, -40]));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([-20, -40]));
     });
 
     it('scaling 3 dimensional vector', () => {
         const vec = new Vector([10, 20, 30]);
         vec.scale(0);
-        expect(JSON.stringify(vec.value)).to.equal(JSON.stringify([0, 0, 0]));
+        expect(JSON.stringify(vec.values)).to.equal(JSON.stringify([0, 0, 0]));
     });
 });
 
@@ -423,17 +423,17 @@ describe('vlength()', () => {
 describe('noramalize()', () => {
     it('noramalize 1 dimensional vector', () => {
         const vec = new Vector([-87]);
-        expect(JSON.stringify(vec.noramalize().value)).to.equal(JSON.stringify(new Vector([-87/87]).value));
+        expect(JSON.stringify(vec.noramalize().values)).to.equal(JSON.stringify(new Vector([-87/87]).values));
     });
 
     it('noramalize 2 dimensional vector', () => {
         const vec = new Vector([4, 3]);
-        expect(JSON.stringify(vec.noramalize().value)).to.equal(JSON.stringify(new Vector([4/5, 3/5]).value));
+        expect(JSON.stringify(vec.noramalize().values)).to.equal(JSON.stringify(new Vector([4/5, 3/5]).values));
     });
 
     it('noramalize 3 dimensional vector', () => {
         const vec = new Vector([0, 0, 0]);
-        expect(JSON.stringify(vec.noramalize().value)).to.equal(JSON.stringify(new Vector([0, 0, 0]).value));
+        expect(JSON.stringify(vec.noramalize().values)).to.equal(JSON.stringify(new Vector([0, 0, 0]).values));
     });
 });
 
@@ -453,6 +453,6 @@ describe('cross()', () => {
     it('cross 3 dimensional vectors', () => {
         const vec1 = new Vector([3, 5, 3]);
         const vec2 = new Vector([2, 5, 2]);
-        expect(JSON.stringify(vec1.cross(vec2).value)).to.equal(JSON.stringify(new Vector([-5, 0, 5]).value));
+        expect(JSON.stringify(vec1.cross(vec2).values)).to.equal(JSON.stringify(new Vector([-5, 0, 5]).values));
     });
 });

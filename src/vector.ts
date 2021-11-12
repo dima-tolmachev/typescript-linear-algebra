@@ -9,11 +9,11 @@ export default class Vector {
         }
     }
 
-    get value(): number[] {
+    get values(): number[] {
         return this._vec;
     }
 
-    set value(newValue: number[]) {
+    set values(newValue: number[]) {
         if (newValue.length == 0 || newValue.length > 3) throw new Error("Vector must be size of 2 or 3.");
         this._vec = newValue;
     }
@@ -59,11 +59,11 @@ export default class Vector {
     }
 
     public inverse(): void {
-        this._vec = this.implementToAllElements((v, i) => v * -1).value;
+        this._vec = this.implementToAllElements((v, i) => v * -1).values;
     }
 
     public clone(): Vector {
-        return new Vector(this.value);
+        return new Vector(this.values);
     }
 
     public equals(vec2: Vector): boolean {
@@ -75,12 +75,12 @@ export default class Vector {
     }
 
     public scale(num: number): void {
-        this.value = this.implementToAllElements((val) => (val * num)).value;
+        this.values = this.implementToAllElements((val) => (val * num)).values;
     }
 
     public dot(vec2: Vector): number {
         if (this.rows != vec2.rows) throw new Error("Those vectors are from different dimensions.");
-        return this.value.reduce((res, v, i) => res + (v * vec2.at(i)), 0);
+        return this.values.reduce((res, v, i) => res + (v * vec2.at(i)), 0);
     }
 
     public sqrdLength(): number {

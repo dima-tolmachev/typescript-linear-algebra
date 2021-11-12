@@ -2,7 +2,7 @@
 
 #### Todo:
 1. Vector
-    - [X] Value (getter & setter)
+    - [X] Values (getter & setter)
     - [X] Rows
     - [X] Reset
     - [X] At
@@ -21,4 +21,20 @@
     - [X] Length
     - [X] Normalize
     - [X] Cross
+
 2. Matrix
+    - [X] At
+    - [X] Rows
+    - [X] Cols
+    - [X] Value
+    - [X] Reset
+    - [X] Add
+    - [X] Subtract
+    - [X] Multiply
+    - [X] Divide
+    - [X] Clone
+    - [X] Equals
+    - [X] Square
+    - [X] Scale
+    - [X] Transpose
+    - [X] Inverse
